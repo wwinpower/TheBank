@@ -11,7 +11,7 @@ interface InputComponentProps {
     onFocus?: () => void;
     onBlur?: () => void;
     style?: object;
-    type?: string;
+    secureTextEntry?: boolean;
 }
 
 const InputComponent: React.FC<InputComponentProps> = (
@@ -24,7 +24,7 @@ const InputComponent: React.FC<InputComponentProps> = (
         onFocus,
         onBlur,
         style,
-        type
+        secureTextEntry
     }
 ) => {
 
@@ -38,7 +38,7 @@ const InputComponent: React.FC<InputComponentProps> = (
             onBlur={onBlur}
             style={style}
             name={name}
-            type={type || "text"}
+            secureTextEntry={secureTextEntry || false}
         />
     );
 };

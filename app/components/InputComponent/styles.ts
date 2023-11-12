@@ -4,7 +4,7 @@ import theme from "@styles/theme";
 interface InputFieldProps {
     focused: boolean;
     name: string;
-    type: string;
+    secureTextEntry: boolean;
 }
 
 export const InputField = styled.TextInput<InputFieldProps>`

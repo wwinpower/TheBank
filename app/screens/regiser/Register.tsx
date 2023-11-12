@@ -104,7 +104,7 @@ const Register: FC = () => {
                                     onChange={(e) => handleInputChange(e, "password")}
                                     onFocus={() => handleInputFocus('password')}
                                     onBlur={handleInputBlur}
-                                    type="password"
+                                    secureTextEntry={true}
                                 />
                             </FormItem>
                         </FormGroup>
