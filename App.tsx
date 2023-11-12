@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {StatusBar} from 'expo-status-bar';
+import 'react-native-gesture-handler';
+import {LogBox, StyleSheet, Text, View} from 'react-native';
+import {AuthProvider} from "@providers/AuthProvider";
+import Navigation from "./app/navigation/Navigation";
+import {Inter_900Black, useFonts} from "@expo-google-fonts/inter";
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    let [fontsLoaded, fontError] = useFonts({
+        Inter_900Black,
+    });
+
+    if (!fontsLoaded && !fontError) {
+        return null;
+    }
+
+    return <AuthProvider><Navigation/></AuthProvider>
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+LogBox.ignoreAllLogs();
